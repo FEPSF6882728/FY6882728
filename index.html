@@ -3,11 +3,14 @@
 <html>
 
     <head>
+
+        <!metadata>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!metadata>
+      
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     
-    <!style of webpage>
+        <!style of webpage>
         <style>
         
 
@@ -48,7 +51,7 @@
         
     <hr>
         
-    <h2 style="font-family:calibri:"><b>Conference paper: Engine cycles </b></h2>
+    <h2 style="font-family:calibri;"><b>Conference paper: Engine cycles </b></h2>
     
     <hr>
         
@@ -64,11 +67,18 @@
         <td><a href="#Introduction">Introduction</td>
         </tr>
         <tr>
-        <td><a href ="#Analysis and discussion">Analysis and discussion</td>
+        <td><a href ="#Turbochargers">Analysis and discussion</td>
+        </tr>
+        <tr>
+        <td><a href = "#Superchargers">References</td>
+        </tr>
+        <tr>
+        <td><a href = "#Turbochargers vs Superchargers vs Naturally aspirated">Turbochargers vs Superchargers vs Naturally aspirated</td>
         </tr>
         <tr>
         <td><a href = "#References">References</td>
         </tr>
+        
     </table>
         
     <hr>
@@ -101,16 +111,72 @@
         or turbocharging a vehicle is to increase the rate of airflow through the intake, as more air
         leads to more efficient combustion. To achieve this, both superchargers and turbochargers
         compress the incoming air using different methods.
+        
     </pre>
     </p>
 
-    <!Analysis and discussion>
-    <h3 id="Analysis and discussion">Analysis and discussion</h3>
+    <!Turbochargers>
+    <h3 id="Turbochargers">Turbochargers</h3>
     <p class="ex1">
     <pre>
-        Analysis and discussion
+        Turbochargers use the exhaust fumes that are expelled from each piston stroke to increase the
+        air intake. To do this, a turbine is connected to the exhaust and spools up (sometimes reaching
+        speeds up to 200,000 Rotations per minute) as the engine gets rid of the waste gasses from
+        combustion. This turbine is directly connected to a compressor which then compresses and forces
+        air into the intake. This compression means that the air is denser, which is favourable for
+        combustion. However, because the air has been compressed, the temperature of the air has also
+        increased as pressure and temperature are directly proportional. To reverse this, before the
+        air reaches the combustion chamber, it must first cool down through an intercooler. This
+        combination of processes leads to cold, dense air, ideal for efficient combustion. 
+        
+        However, while turbochargers come with the benefit of fuel economy and better performance, they
+        come at the cost of time. Turbochargers are dependent on the exhaust flow of the engine, before
+        boost can be produced the engine must first build up enough exhaust pressure to spool up the
+        turbine. This leads to a slight delay which can range between a fraction of a second, to over
+        a second. Some variables that affect the duration of this lag include the size/weight of the
+        turbocharger (affects the rotational inertia of the turbine), the volume of the compression
+        chamber (affects the volume of exhaust gases being expelled per piston stroke), and the RPM of
+        the engine (affects the rate at which exhaust gasses are expelled). To summarise, the main
+        benefit of Turbochargers is that they use waste kinetic energy from the exhaust and repurposes it,
+        saving fuel and improving power. This is why turbochargers are found in many modern cars as well
+        as performance cars.
+
     </pre>
     </p>
+
+        <!Superchargers>
+    <h3 id="Superchargers">Superchargers</h3>
+    <p class="ex1">
+    <pre>
+        Superchargers use a belt connected directly to the crankshaft to compress the air. You could see this
+        as the engine ‘stealing’ power from itself to itself to improve its combustion. Superchargers share
+        the same cooling process as turbochargers through an intercooler. The big difference in superchargers
+        is that the boost is instant, unlike turbochargers. This is because the belt is connected directly
+        to the crankshaft, as soon as the engine is running, air is compressed, no need to wait for anything
+        to build up. This means that at lower engine RPM’s (the number of crankshaft rotations per minute
+        i.e. the engines speed) the car is still able to compress air. This is beneficial for performance cars
+        as they will accelerate quicker at lower speeds. 
+        
+        It appears superchargers solve the problem of turbo lag, however, unfortunately this comes at a cost
+        as well. Because the engine is ‘stealing’ power from the engine, this also requires more fuel, leading
+        to higher emissions and lower fuel efficiency.
+    
+    </pre>
+    </p>
+
+    <!Turbochargers vs Superchargers vs Naturally aspirated>
+    <h3 id="Turbochargers vs Superchargers vs Naturally aspirated">Turbochargers vs Superchargers vs Naturally aspirated</h3>
+    <p class="ex1">
+    <pre>
+        Below is a table showing fuel efficiencies for turbochargers, superchargers and Naturally Aspirated
+        engines (neither turbocharger or supercharger). It is Important to note that these figures are for
+        ___ car with the addition of the specific turbocharger _____ or supercharger____. This figure should
+        be used as a rough guideline for the differences. 
+        
+    </pre>
+    </p>
+
+
         
     <!table for analysis>
         
@@ -133,7 +199,7 @@
         </tr>
     </table>
         
-    <!Javascript for Date and time>
+    <!Javascript>
 
     <p id="date-time"></p>
 
@@ -143,9 +209,51 @@
         
         const d = new Date();    
         document.getElementById("date-time").innerHTML = d;
+
         
     </script>
 
+    <div id="chart_div"></div>
+
+    <script> type="text/javasript">
+
+        function drawChart() {
+
+        var data = new google visualization.DataTable();
+
+        data.addColumn('Number','RPM')
+
+        data.addColumn('Number','Power')
+
+        data.addRows([
+
+        [25,40000],
+
+        [27,50000],
+
+        [35,60000],
+
+        [40,70000],
+
+        ]);
+
+        var options = {
+
+            title: 'RPM against Power for superchargers',
+
+            hAxis: {title: 'RPM'},
+            vAxis: {title: 'Power'}
+
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementByld('chart_div'));
+
+        chart.draw(data, options);
+
+        }
+        
+    </script>
+        
     <hr>
 
     <!References>
