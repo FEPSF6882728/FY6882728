@@ -89,8 +89,10 @@
         const SuperchargersCount = displayWordCount("Superchargers");
 
         const TurbochargersVsSuperchargersCount = displayWordCount("TurbochargersVsSuperchargers");
+
+        const ConclusionCount = displayWordCount("Conclusion")
             
-        const totalWordCount = IntroductionCount + TurbochargersCount + SuperchargersCount + TurbochargersVsSuperchargersCount;
+        const totalWordCount = IntroductionCount + TurbochargersCount + SuperchargersCount + TurbochargersVsSuperchargersCount + ConclusionCount;
 
         document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
         
@@ -183,6 +185,9 @@
         </tr>
         <tr>
         <td><a href = "#TurbochargersVsSuperchargers">Turbochargers vs Superchargers</td>
+        <tr>
+        <td><a href = "#Conclusion">Conclusion</td>
+        </tr>
         </tr>
         <tr>
         <td><a href = "#References">References</td>
@@ -339,6 +344,16 @@
         <td>200</td>
     </tr>
 </table>
+
+    <!Conclusion>
+    <h3>Conclusion</h3>
+    <p class="ex1">
+    <pre id="Conclusion">
+
+        conclusion
+
+    </pre>
+    </p>
         
 
     <p id="totalWordCount"></p>
