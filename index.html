@@ -149,6 +149,18 @@
     <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
         Verify Last Modified Time
     </button>
+
+        <p id="date-time"></p>
+
+    <script>
+
+        //Javascript for Date and time
+        
+        const d = new Date();    
+        document.getElementById("date-time").innerHTML = d;
+
+        
+    </script>
     
     <hr>
         
@@ -282,8 +294,6 @@
         
     </pre>
     </p>
-
-
         
     <!table for analysis>
         
@@ -330,71 +340,9 @@
     </tr>
 </table>
         
-    <!Javascript>
-
-    <p id="date-time"></p>
-
-    <script>
-
-        //Javascript for Date and time
-        
-        const d = new Date();    
-        document.getElementById("date-time").innerHTML = d;
-
-        
-    </script>
-
-    <div id="chart_div"></div>
-
-    <script type="text/javascript">
-
-        
-        google.charts.load('current',{'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-
-        function drawChart() {
-
-        var data = new google.visualization.DataTable();
-
-        data.addColumn('number','RPM')
-
-        data.addColumn('number','Power')
-
-        data.addRows([
-
-        [25,40000],
-
-        [27,50000],
-
-        [35,60000],
-
-        [40,70000]
-
-        ]);
-
-        var options = {
-
-            title: 'RPM against Power for superchargers',
-
-            hAxis: {title: 'RPM'},
-            vAxis: {title: 'Power'}
-
-        };
-
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-        }
-        
-    </script>
 
     <p id="totalWordCount"></p>
 
-
-
-    
     <hr>
 
     <!References>
