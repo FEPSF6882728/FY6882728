@@ -11,6 +11,43 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
         <script type="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
+
+        <!javascript for wordcount>
+
+        <script>
+            
+        function displayWordCount(sectionId, outputId) {
+            
+        const text = document.getElementById(sectionId).textContent;
+            
+        const wordArray = text.trim().split(/\s+/);
+            
+        const wordCount = wordArray.length;
+            
+        return wordCount;
+        
+        }
+            
+        function displayTotalWordCount() {
+            
+        const IntroductionCount = displayWordCount("Introduction_InText");
+            
+        const TurbochargersCount = displayWordCount("Turbochargers_InText");
+
+        const SuperchargersCount = displayWordCount("Superchargers_InText");
+
+        const TurbochargersVsSuperchargersVsNaturallyAspiratedCount = displayWordCount("TurbochargersVsSuperchargersVsNaturallyAspirated_InText");
+            
+        const totalWordCount = IntroductionCount + TurbochargersCount + SuperchargersCount + TurbochargersVsSuperchargersVsNaturallyAspiratedCount;
+
+        document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+        
+        }
+        
+        window.onload = displayTotalWordCount;
+        
+        </script>
+
     
         <!style of webpage>
         <style>
@@ -124,12 +161,14 @@
         Turbochargers use the exhaust fumes that are expelled from each piston stroke to increase the
         air intake. To do this, a turbine is connected to the exhaust and spools up as the engine gets
         rid of the waste gasses from combustion (sometimes reaching speeds up to 200,000 Rotations per
-        minute in high performance cars). This turbine is directly connected to a compressor which then
-        compresses and forces air into the intake. This compression means that the air is denser, which
-        is favourable for combustion. However, because the air has been compressed, the temperature of
-        the air has also increased as pressure and temperature are directly proportional. To reverse this,
-        before the air reaches the combustion chamber, it must first cool down through an intercooler.
-        This combination of processes leads to cold, dense air, ideal for efficient combustion. 
+        minute in high performance cars). This is explained in the book Turbocharging the Internal Combustion
+        Engine. "Turbochargers utilize the energy from exhaust gases to spin a turbine connected to a
+        compressor, which increases the pressure and density of the intake air, resulting in more efficient
+        combustion" (Watson and Janota, 1982). Although compressing the air will lead to more efficien
+        combustion because the air has been compressed, the temperature of the air has also increased
+        as pressure and temperature are directly proportional. To reverse this, before the air reaches
+        the combustion chamber, it must first cool down through an intercooler. This combination of
+        processes leads to cold, dense air, ideal for efficient combustion. 
         
         However, while turbochargers come with the benefit of fuel economy and better performance, they
         come at the cost of time. Turbochargers are dependent on the exhaust flow of the engine, before
@@ -151,7 +190,7 @@
     <p class="ex1">
     <pre>
         Superchargers use a belt connected directly to the crankshaft to compress the air. You could see this
-        as the engine ‘stealing’ power from itself to itself to improve its combustion. Superchargers share
+        as the engine ‘stealing’ power from itself to itself to improve combustion. Superchargers share
         the same cooling process as turbochargers through an intercooler. The big difference in superchargers
         is that the boost is instant, unlike turbochargers. This is because the belt is connected directly
         to the crankshaft, as soon as the engine is running, air is compressed, no need to wait for anything
@@ -269,6 +308,10 @@
     <pre>
       NASA Glenn Research Center (2023) Four-stroke cycle. 
       Available at: https://www1.grc.nasa.gov/beginners-guide-to-propulsion/four-stroke-cycle/ (Accessed: 25 July 2025)
+
+      Watson, N. and Janota, M.S. (1982) Turbocharging the Internal Combustion Engine. London: Macmillan.
+
+
     </pre>
     </p>
 
